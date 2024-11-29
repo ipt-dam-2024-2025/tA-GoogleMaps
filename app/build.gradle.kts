@@ -33,9 +33,18 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+
 }
 
 dependencies {
+
+    // implementation ("com.google.android.gms:play-services-maps:19.0.0")
+    implementation (libs.play.services.maps)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
