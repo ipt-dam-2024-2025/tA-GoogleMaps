@@ -1,11 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.androidSecretsGradlePlugin)
+    // id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
+    // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin
 }
-
+// alias(libs.plugins.googleAndroidLibrariesMapsplatformSecretsGradlePlugin)
 android {
     namespace = "pt.ipt.dam.googlemaps"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "pt.ipt.dam.googlemaps"
@@ -27,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 
     buildFeatures {
@@ -44,7 +47,7 @@ android {
 dependencies {
 
     // implementation ("com.google.android.gms:play-services-maps:19.0.0")
-    implementation (libs.play.services.maps)
+    implementation(libs.play.services.maps)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
